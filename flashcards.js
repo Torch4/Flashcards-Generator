@@ -1,6 +1,6 @@
 var fs = require("fs");
 var inquirer = require("inquirer");
-var library = require("./flashcardLibrary.json");
+var library = require("./flashcardlibrary.json");
 var basicCard = require("./basicCard.js")
 var clozeCard = require("./clozeCard.js")
 
@@ -46,7 +46,7 @@ function openMenu() {
 
         
         case 'Exit':
-            console.log("We appreciate you playing flashcards")
+            console.log("We appreciate you playing flashcards");
             return;
             break;
 
@@ -99,7 +99,7 @@ function makeCard() {
                     back: cardData.back
                 };
                 library.push(cardObj);				
-                fs.writeFile("flashcardLibrary.json", JSON.stringify(library, null, 2)); 
+                fs.writeFile("flashcardlibrary.json", JSON.stringify(library, null, 2)); 
 
                 inquirer.prompt([					
                     {
@@ -140,7 +140,7 @@ function makeCard() {
                 };
                 if (cardObj.text.indexOf(cardObj.cloze) !== -1) {   
                     library.push(cardObj);							
-                    fs.writeFile("flashcardLibrary.json", JSON.stringify(library, null, 2)); 
+                    fs.writeFile("flashcardlibrary.json", JSON.stringify(library, null, 2)); 
                 } else {											
                     console.log("I'm sorry, I couldn't find that on the other side");
 
@@ -189,7 +189,7 @@ function askQuestions() {
             }
         ]).then(function (answer) {					
             if (answer.question === library[count].back || answer.question === library[count].cloze) {
-                console.log("You are correct.");
+                console.log("That is correct.");
             } else {
             	
                 if (drawnCard.front !== undefined) { 
@@ -218,7 +218,7 @@ function shuffleDeck() {
 
       newDeck[i] = shuffled;
   }
-  fs.writeFile("flashcardLibrary.json", JSON.stringify(newDeck, null, 2));
+  fs.writeFile("flashcardlibrary.json", JSON.stringify(newDeck, null, 2));
   console.log("The deck of flashcards have been shuffled");
   
 }
@@ -237,7 +237,7 @@ function randomCard() {
         ]).then(function (answer) {					
         	
             if (answer.question === library[randomNumber].back || answer.question === library[randomNumber].cloze) {
-                console.log("You are correct.");
+                console.log("That is correct");
                 setTimeout(openMenu, 1000);
             } else {
             	
