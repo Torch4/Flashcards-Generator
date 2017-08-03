@@ -1,0 +1,25 @@
+{
+  "name": "Flashcard-Generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Torch4/Flashcards-Generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Torch4/Flashcards-Generator/issues"
+  },
+  "homepage": "https://github.com/Torch4/Flashcards-Generator#readme",
+  "dependencies": {
+  
+    "inquirer": "^3.1.1",
+    "requirer": "2.4.20"
+  }
+}
