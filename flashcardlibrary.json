@@ -1,0 +1,62 @@
+[
+  {
+    "type": "clozeCard",
+    "text": "Benjamin Franklin is famous for flying a kite in a storm",
+    "cloze": "kite"
+  },
+  {
+    "type": "clozeCard",
+    "text": "The telegraph service began in Britian in 1839.",
+    "cloze": "telegraph"
+  },
+  {
+    "type": "basicCard",
+    "front": "What is the capital of CT",
+    "back": "Hartford"
+  },
+  {
+    "type": "clozeCard",
+    "text": "On January 1, 1808 it became illegal to own slaves in the US.",
+    "cloze": "own slaves"
+  },
+  {
+    "type": "basicCard",
+    "front": "Where am I?",
+    "back": "Earth"
+  },
+  {
+    "type": "basicCard",
+    "front": "The task of Robert R. Livingston and James Monroe to negotiate in 1802.",
+    "back": "Louisiana Purchase"
+  },
+  {
+    "type": "clozeCard",
+    "text": "Edmond Halley calculated that comets return in 1705.",
+    "cloze": "Edmond Halley"
+  },
+  {
+    "type": "basicCard",
+    "front": "Who invented the first inexpensive car.",
+    "back": "Henry Ford"
+  },
+  {
+    "type": "basicCard",
+    "front": "What historic event occurred at Appomattox Court House.",
+    "back": "The Confederacy Surrenders"
+  },
+  {
+    "type": "clozeCard",
+    "text": "The Gettysburg Address is 260 words long.",
+    "cloze": "260"
+  },
+  {
+    "type": "basicCard",
+    "front": "What year did Lewis and Clark reach the Pacific.",
+    "back": "1805"
+  },
+  {
+    "type": "basicCard",
+    "front": "America's first subway line opened in what city in 1897.",
+    "back": "Boston"
+  }
+]
