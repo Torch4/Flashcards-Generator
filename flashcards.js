@@ -1,15 +1,11 @@
 var fs = require("fs");
 var inquirer = require("inquirer");
-var library = require("./flashcardlibrary.json");
+var library = require("./flashcardslibrary.json");
 var basicCard = require("./basicCard.js")
 var clozeCard = require("./clozeCard.js")
-
-
-
 var drawnCard;
 var playedCard;
 var count = 0;
-
 
 function openMenu() {
   inquirer.prompt([															
@@ -26,7 +22,9 @@ function openMenu() {
 
         case 'Make':
             console.log("It's time to make some cards");
-            waitMsg = setTimeout(createCard, 1000);
+            // where is createCard defined? getting errors, I think you 
+            // meant makeCard here
+            waitMsg = setTimeout(makeCard, 1000);
             break;
 
         case 'Deal All':
@@ -44,7 +42,6 @@ function openMenu() {
             waitMsg = setTimeout(shuffleDeck, 1000);
             break;
 
-        
         case 'Exit':
             console.log("We appreciate you playing flashcards");
             return;
@@ -220,9 +217,7 @@ function shuffleDeck() {
   }
   fs.writeFile("flashcardlibrary.json", JSON.stringify(newDeck, null, 2));
   console.log("The deck of flashcards have been shuffled");
-  
 }
-
 
 function randomCard() {
   var randomNumber = Math.floor(Math.random() * (library.length - 1));  
@@ -253,31 +248,33 @@ function randomCard() {
 
 };
 
-
 function showCards () {
 
   var library = require("./flashcardLibrary.json");
 
+  // this works, but you could use a loop here and remove the count variables below,
+  // this is generally preferred for looping through an array as its more concise i.e.
+  // for(var i=0; i < library.length; i++) {
   if (count < library.length) {                     
-    
 
-    if (library[count].front !== undefined) { 
-        console.log("");
-        console.log("++++++++++++++++++ Basic Card ++++++++++++++++++");
-        console.log("++++++++++++++++++++++++++++++++++++++++++++++++");
-        console.log("Front: " + library[count].front);
-        console.log("------------------------------------------------");
-        console.log("Back: " + library[count].back + "."); 
-        console.log("++++++++++++++++++++++++++++++++++++++++++++++++");
-        console.log("");
-
-    } else { 
+    // We can just check for library[count].front is "truthy" aka defined
+    // and reverse the logic rather than checking for undefined.
+    if (library[count].front) {
         console.log("");
         console.log("++++++++++++++++++ Cloze Card ++++++++++++++++++");
         console.log("++++++++++++++++++++++++++++++++++++++++++++++++");
         console.log("Text: " + library[count].text); 
         console.log("------------------------------------------------");
         console.log("Cloze: " + library[count].cloze + "."); 
+        console.log("++++++++++++++++++++++++++++++++++++++++++++++++");
+        console.log("");
+    } else {
+        console.log("");
+        console.log("++++++++++++++++++ Basic Card ++++++++++++++++++");
+        console.log("++++++++++++++++++++++++++++++++++++++++++++++++");
+        console.log("Front: " + library[count].front);
+        console.log("------------------------------------------------");
+        console.log("Back: " + library[count].back + "."); 
         console.log("++++++++++++++++++++++++++++++++++++++++++++++++");
         console.log("");
     }
