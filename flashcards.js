@@ -10,7 +10,7 @@ var drawnCard;
 var playedCard;
 var count = 0;
 
-
+<--------starting with a function that allows user to enter their first choice------>
 function openMenu() {
   inquirer.prompt([															
       {
